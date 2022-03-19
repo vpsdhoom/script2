@@ -200,14 +200,14 @@ cat > /etc/banner << MyBanner
 <br>
 ==========================
 <br>
-<i><font color='green'>- NO SPAMMING !!!</br></font></i>
+<i><font color='green'>- DHOOM !!!</br></font></i>
 <br><i><font color='green'>- NO DDOS !!!</br></font></i>
 <br><i><font color='green'>- NO HACKING !!!</br></font></i>
 <br><i><font color='green'>- NO CARDING !!!</br></font></i>
 <br><i><font color='green'>- NO TORRENT !!!</i></br></font></i>
 <br>
 ==========================
-<br><font color=yellow size=7><b>POWERED BY: TKNETWORK</b></font>
+<br><font color=yellow size=7><b>POWERED BY: DHOOM</b></font>
 <br>
 MyBanner
     
@@ -583,7 +583,7 @@ socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 
 [stunnel]
-connect = 127.0.0.1:80
+connect = 127.0.0.1:22
 accept = 443" >> stunnel.conf
 
 cd /etc/default && rm stunnel4
