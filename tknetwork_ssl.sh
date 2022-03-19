@@ -44,14 +44,6 @@ apt-get install php php-mysqli php-mysql php-gd php-mbstring -y
 apt-get install php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-snmp php-soap -y
 }
 
-
-wget -O /bin/badvpn-udpgw "https://www.dropbox.com/s/ugv8xks6g6xxkt9/badvpn-udpgw" 
-chmod 777 /bin/badvpn-udpgw
-wget -O /root/bad.sh "https://www.dropbox.com/s/s92tmm7lqaef0sx/bad.sh?dl=0"
-
-#BADVPN 
-screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 2000 --max-connections-for-client 50 -y
-
 apt-get install squid -y
 echo "http_port 8080
 acl to_vpn dst `curl ipinfo.io/ip`
