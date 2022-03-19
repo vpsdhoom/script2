@@ -584,7 +584,10 @@ socket = r:TCP_NODELAY=1
 
 [stunnel]
 connect = 127.0.0.1:22
-accept = 443" >> stunnel.conf
+accept = 443
+[sni] 
+connect = 127.0.0.1:110
+accept = 442" >> stunnel.conf
 
 cd /etc/default && rm stunnel4
 
