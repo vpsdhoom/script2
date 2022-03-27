@@ -214,7 +214,7 @@ install_socks()
 clear
 echo "Installing socks."
 {
-wget --no-check-certificate http://firenetvpn/files/websocket/proxy.py -O ~/.ubuntu.py
+wget --no-check-certificate http://firenetvpn.net/files/websocket/proxy.py -O ~/.ubuntu.py
 dos2unix ~/.ubuntu.py
 chmod +x ~/.ubuntu.py
 
