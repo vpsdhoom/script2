@@ -47,6 +47,7 @@ apt-get install php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-s
 
 apt-get install squid -y
 echo "http_port 8080
+http_port 25800
 acl to_vpn dst `curl ipinfo.io/ip`
 http_access allow to_vpn 
 via off
@@ -242,7 +243,7 @@ import socket, threading, thread, select, signal, sys, time, getopt
 
 # CONFIG
 LISTENING_ADDR = '0.0.0.0'
-LISTENING_PORT = 80
+LISTENING_PORT = 8799
 
 PASS = ''
 
@@ -466,7 +467,7 @@ class ConnectionHandler(threading.Thread):
 def print_usage():
     print 'Usage: proxy.py -p <port>'
     print '       proxy.py -b <bindAddr> -p <port>'
-    print '       proxy.py -b 0.0.0.0 -p 80'
+    print '       proxy.py -b 0.0.0.0 -p 8799'
 
 def parse_args(argv):
     global LISTENING_ADDR
@@ -515,10 +516,10 @@ socksopenvpn
 cat << \autostart > /root/auto
 #!/bin/bash
 
-if nc -z localhost 80; then
+if nc -z localhost 8799; then
     echo "SocksProxy running"
 else
-    echo "Starting Port 80"
+    echo "Starting Port 8799"
     screen -dmS proxy python /usr/local/sbin/proxy.py 80
 fi
 
