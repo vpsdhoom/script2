@@ -1,4 +1,4 @@
-rm -rf debian*
+rm -rf ubuntu*
 fun_bar () {
 comando[0]="$1"
 comando[1]="$2"
@@ -237,7 +237,7 @@ apt-get install netcat lsof php php-mysqli php-mysql php-gd php-mbstring python 
 cat << \socksopenvpn > /usr/local/sbin/proxy.py
 #!/usr/bin/env python3
 # encoding: utf-8
-#  By: Tk@Network
+#  By: TK@mooa322
 import socket, threading, thread, select, signal, sys, time, getopt
 
 # CONFIG
@@ -543,7 +543,7 @@ cat > /etc/default/dropbear << MyDropbear
 #FirenetDev
 NO_START=0
 DROPBEAR_PORT=550
-DROPBEAR_EXTRA_ARGS="-p 110"
+DROPBEAR_EXTRA_ARGS="-p 110 -p 551"
 DROPBEAR_BANNER="/etc/banner"
 DROPBEAR_RSAKEY="/etc/dropbear/dropbear_rsa_host_key"
 DROPBEAR_DSSKEY="/etc/dropbear/dropbear_dss_host_key"
@@ -567,7 +567,7 @@ clear
 echo "Installing stunnel."
 {
 cd /etc/stunnel/ || exit
-openssl req -new -newkey rsa:2048 -days 3650 -nodes -x509 -sha256 -subj '/CN=KobzVPN/O=KobeKobz/C=PH' -keyout /etc/stunnel/stunnel.pem -out /etc/stunnel/stunnel.pem
+openssl req -new -newkey rsa:2048 -days 3650 -nodes -x509 -sha256 -subj '/CN=DHOOM/O=DHOOM/C=PH' -keyout /etc/stunnel/stunnel.pem -out /etc/stunnel/stunnel.pem
 
 rm -rf /etc/stunnel/stunnel.conf
 echo "cert = /etc/stunnel/stunnel.pem
@@ -600,9 +600,9 @@ sudo service stunnel4 restart
 
 
 #API Details
-VPN_Owner='Tknetwork';
-API_LINK='octaviavpn.xyz/api/authentication';
-API_KEY='Tknetwork';
+VPN_Owner='DHOOM';
+API_LINK='dhoomvpn.xyz/api/authentication';
+API_KEY='DHOOM';
 
 
 
@@ -636,11 +636,11 @@ echo "* * * * * /bin/bash  /home/authentication.sh >/dev/null 2>&1" | crontab -
 sh active.sh | tee -a  /home/active.sh
 
 #Putapepe
-wget -O /home/active.sh "octaviavpn.xyz/api/authentication/active.php?key=Tknetwork"
+wget -O /home/active.sh "dhoomvpn.xyz/api/authentication/active.php?key=dhoom"
 sleep 5
-wget -O /home/inactive.sh "octaviavpn.xyz/api/authentication/inactive.php?key=Tknetwork"
+wget -O /home/inactive.sh "dhoomvpn.xyz/api/authentication/inactive.php?key=dhoom"
 sleep 5
-wget -O /home/deleted.sh "octaviavpn.xyz/api/authentication/deleted.php?key=Tknetwork"
+wget -O /home/deleted.sh "dhoomvpn.xyz/api/authentication/deleted.php?key=dhoom"
 sleep 15
 bash /home/active.sh
 sleep 15
