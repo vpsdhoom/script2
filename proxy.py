@@ -2,19 +2,7 @@ import socket, threading, thread, select, signal, sys, time, getopt
 
 # CONFIG
 LISTENING_ADDR = '0.0.0.0'
-LISTENING_PORT = 8799
-
-PASS = ''
-
-# CONST
-BUFLEN = 4096 * 4
-TIMEOUT = 60
-DEFAULT_HOST = '127.0.0.1:22'
-RESPONSE = 'HTTP/1.1 101 Switching Protocols \r\n\r\n'
-
-# CONFIG
-LISTENING_ADDR = '0.0.0.0'
-LISTENING_PORT = 80
+LISTENING_PORT = 80 8799 8888
 
 PASS = ''
 
