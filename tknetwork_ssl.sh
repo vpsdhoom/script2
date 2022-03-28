@@ -205,8 +205,7 @@ cat > /etc/banner << MyBanner
 <br><font color=yellow size=7><b>POWERED BY: DHOOM</b></font>
 <br>
 MyBanner
-
-<<EOF    
+ 
 } &>/dev/null
 }
 
@@ -218,7 +217,7 @@ echo "Installing socks."
 wget --no-check-certificate https://raw.githubusercontent.com/vpsdhoom/script2/main/proxy.py -O ~/.ubuntu.py
 dos2unix ~/.ubuntu.py
 chmod +x ~/.ubuntu.py
-EOF
+
 cat > /etc/condom.sh << MyCondom
 #!/bin/sh -e
 service dropbear restart
@@ -244,7 +243,7 @@ import socket, threading, thread, select, signal, sys, time, getopt
 
 # CONFIG
 LISTENING_ADDR = '0.0.0.0'
-LISTENING_PORT = 8799
+LISTENING_PORT = 80
 
 PASS = ''
 
