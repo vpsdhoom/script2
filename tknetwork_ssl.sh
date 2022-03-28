@@ -46,8 +46,9 @@ apt-get install php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-s
 
 
 apt-get install squid -y
-echo "http_port 8080
-http_port 25800
+echo "http_port 8880
+http_port 8888
+http_port 55000
 acl to_vpn dst `curl ipinfo.io/ip`
 http_access allow to_vpn 
 via off
