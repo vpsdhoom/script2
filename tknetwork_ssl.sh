@@ -205,7 +205,7 @@ cat > /etc/banner << MyBanner
 <br><font color=yellow size=7><b>POWERED BY: DHOOM</b></font>
 <br>
 MyBanner
-    
+<<EOF    
 } &>/dev/null
 }
 
@@ -509,6 +509,7 @@ def main(host=LISTENING_ADDR, port=LISTENING_PORT):
 if __name__ == '__main__':
     parse_args(sys.argv[1:])
     main()
+EOF
 
 socksopenvpn
 
