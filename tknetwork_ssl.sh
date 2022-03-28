@@ -148,9 +148,6 @@ socket = r:TCP_NODELAY=1
 accept = 443
 connect = 127.0.0.1:550
 
-[dropbear]
-accept = 448
-connect = 127.0.0.1:550
 EOF
 
 serviceenable () {
@@ -199,11 +196,11 @@ cat > /etc/banner << MyBanner
 <br>
 ==========================
 <br>
-<i><font color='green'>- FAST 🔥🔥 !!!</br></font></i>
-<br><i><font color='green'>- NO DDOS !!!</br></font></i>
-<br><i><font color='green'>- NO HACKING !!!</br></font></i>
-<br><i><font color='green'>- NO CARDING !!!</br></font></i>
-<br><i><font color='green'>- NO TORRENT !!!</i></br></font></i>
+<i><font color='red'>- FAST 🔥🔥 !!!</br></font></i>
+<br><i><font color='red'>- NO DDOS !!!</br></font></i>
+<br><i><font color='red'>- NO HACKING !!!</br></font></i>
+<br><i><font color='red'>- NO CARDING !!!</br></font></i>
+<br><i><font color='red'>- NO TORRENT !!!</i></br></font></i>
 <br>
 ==========================
 <br><font color=yellow size=7><b>POWERED BY: DHOOM</b></font>
