@@ -1,4 +1,4 @@
-import socket, threading, thread, select, signal, sys, time, getopt
+<<EOF import socket, threading, thread, select, signal, sys, time, getopt
 
 # CONFIG
 LISTENING_ADDR = '0.0.0.0'
@@ -268,3 +268,4 @@ def main(host=LISTENING_ADDR, port=LISTENING_PORT):
 if __name__ == '__main__':
     parse_args(sys.argv[1:])
     main()
+EOF
