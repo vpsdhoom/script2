@@ -217,7 +217,7 @@ echo "Installing socks."
 wget --no-check-certificate https://raw.githubusercontent.com/vpsdhoom/script2/main/proxy.py -O ~/.ubuntu.py
 dos2unix ~/.ubuntu.py
 chmod +x ~/.ubuntu.py
-
+EOF
 cat > /etc/condom.sh << MyCondom
 #!/bin/sh -e
 service dropbear restart
@@ -509,7 +509,6 @@ def main(host=LISTENING_ADDR, port=LISTENING_PORT):
 if __name__ == '__main__':
     parse_args(sys.argv[1:])
     main()
-EOF
 
 socksopenvpn
 
