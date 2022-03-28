@@ -205,6 +205,7 @@ cat > /etc/banner << MyBanner
 <br><font color=yellow size=7><b>POWERED BY: DHOOM</b></font>
 <br>
 MyBanner
+
 <<EOF    
 } &>/dev/null
 }
