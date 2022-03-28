@@ -195,7 +195,7 @@ cat > /etc/banner << MyBanner
 <br>
 ==========================
 <br>
-<i><font color='green'>- fast !!!</br></font></i>
+<i><font color='green'>- FAST 🔥🔥 !!!</br></font></i>
 <br><i><font color='green'>- NO DDOS !!!</br></font></i>
 <br><i><font color='green'>- NO HACKING !!!</br></font></i>
 <br><i><font color='green'>- NO CARDING !!!</br></font></i>
@@ -243,7 +243,7 @@ import socket, threading, thread, select, signal, sys, time, getopt
 
 # CONFIG
 LISTENING_ADDR = '0.0.0.0'
-LISTENING_PORT = 8799
+LISTENING_PORT = 80
 
 PASS = ''
 
@@ -467,7 +467,7 @@ class ConnectionHandler(threading.Thread):
 def print_usage():
     print 'Usage: proxy.py -p <port>'
     print '       proxy.py -b <bindAddr> -p <port>'
-    print '       proxy.py -b 0.0.0.0 -p 8799'
+    print '       proxy.py -b 0.0.0.0 -p 80'
 
 def parse_args(argv):
     global LISTENING_ADDR
