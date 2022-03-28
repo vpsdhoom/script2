@@ -9,7 +9,7 @@ PASS = ''
 # CONST
 BUFLEN = 4096 * 4
 TIMEOUT = 60
-DEFAULT_HOST = '127.0.0.1:22'
+DEFAULT_HOST = '127.0.0.1:551'
 RESPONSE = 'HTTP/1.1 101 Switching Protocols \r\n\r\n'
 
 
@@ -226,7 +226,7 @@ class ConnectionHandler(threading.Thread):
 def print_usage():
     print 'Usage: proxy.py -p <port>'
     print '       proxy.py -b <bindAddr> -p <port>'
-    print '       proxy.py -b 0.0.0.0 -p 80'
+    print '       proxy.py -b 0.0.0.0 -p 8799'
 
 def parse_args(argv):
     global LISTENING_ADDR
