@@ -1,15 +1,15 @@
-<<EOF import socket, threading, thread, select, signal, sys, time, getopt
+import socket, threading, thread, select, signal, sys, time, getopt
 
 # CONFIG
 LISTENING_ADDR = '0.0.0.0'
-LISTENING_PORT = 8799
+LISTENING_PORT = 80
 
 PASS = ''
 
 # CONST
 BUFLEN = 4096 * 4
 TIMEOUT = 60
-DEFAULT_HOST = '127.0.0.1:551'
+DEFAULT_HOST = '127.0.0.1:550'
 RESPONSE = 'HTTP/1.1 101 Switching Protocols \r\n\r\n'
 
 
@@ -226,7 +226,7 @@ class ConnectionHandler(threading.Thread):
 def print_usage():
     print 'Usage: proxy.py -p <port>'
     print '       proxy.py -b <bindAddr> -p <port>'
-    print '       proxy.py -b 0.0.0.0 -p 8799'
+    print '       proxy.py -b 0.0.0.0 -p 80'
 
 def parse_args(argv):
     global LISTENING_ADDR
@@ -268,4 +268,3 @@ def main(host=LISTENING_ADDR, port=LISTENING_PORT):
 if __name__ == '__main__':
     parse_args(sys.argv[1:])
     main()
-EOF
